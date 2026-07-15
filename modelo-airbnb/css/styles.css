@@ -1,0 +1,927 @@
+/* ==============================
+   VARIÁVEIS
+============================== */
+
+:root {
+  --primary: #ff385c;
+  --primary-active: #e00b41;
+
+  --ink: #222222;
+  --body: #3f3f3f;
+  --muted: #6a6a6a;
+
+  --hairline: #dddddd;
+  --hairline-soft: #ebebeb;
+
+  --surface-soft: #f7f7f7;
+  --white: #ffffff;
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+
+  --shadow:
+    rgba(0, 0, 0, 0.02) 0 0 0 1px,
+    rgba(0, 0, 0, 0.04) 0 2px 6px,
+    rgba(0, 0, 0, 0.10) 0 4px 8px;
+}
+
+
+/* ==============================
+   CONFIGURAÇÕES GERAIS
+============================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  color: var(--ink);
+  background: var(--white);
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+.container {
+  width: min(1280px, calc(100% - 48px));
+  margin-inline: auto;
+}
+
+
+/* ==============================
+   CABEÇALHO
+============================== */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(14px);
+
+  border-bottom: 1px solid var(--hairline-soft);
+}
+
+.nav-shell {
+  min-height: 80px;
+
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+
+  gap: 24px;
+}
+
+
+/* ==============================
+   LOGÓTIPO
+============================== */
+
+.brand {
+  width: fit-content;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 10px;
+
+  color: var(--primary);
+
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.brand-mark {
+  width: 34px;
+  height: 34px;
+
+  display: grid;
+  place-items: center;
+
+  border: 2px solid currentColor;
+  border-radius: 50% 50% 45% 45%;
+}
+
+
+/* ==============================
+   NAVEGAÇÃO
+============================== */
+
+.main-nav {
+  display: flex;
+  align-items: center;
+
+  gap: 28px;
+}
+
+.nav-tab {
+  position: relative;
+
+  padding: 28px 0 22px;
+
+  border: 0;
+
+  background: transparent;
+  color: var(--muted);
+
+  font-weight: 600;
+}
+
+.nav-tab.active {
+  color: var(--ink);
+}
+
+.nav-tab.active::after {
+  content: "";
+
+  position: absolute;
+  left: 20%;
+  right: 20%;
+  bottom: 12px;
+
+  height: 2px;
+
+  background: var(--ink);
+}
+
+.new-badge {
+  position: absolute;
+  top: 13px;
+  right: -18px;
+
+  padding: 2px 5px;
+
+  background: var(--surface-soft);
+
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-full);
+
+  font-size: 8px;
+}
+
+
+/* ==============================
+   AÇÕES DA NAVEGAÇÃO
+============================== */
+
+.nav-actions {
+  justify-self: end;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+.host-link,
+.icon-btn,
+.menu-btn {
+  border: 0;
+  border-radius: var(--radius-full);
+
+  background: transparent;
+  color: var(--ink);
+
+  font-weight: 600;
+}
+
+.host-link {
+  padding: 12px 14px;
+}
+
+.host-link:hover,
+.icon-btn:hover {
+  background: var(--surface-soft);
+}
+
+.icon-btn {
+  width: 42px;
+  height: 42px;
+}
+
+.menu-btn {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 6px 7px 6px 12px;
+
+  border: 1px solid var(--hairline);
+
+  background: var(--white);
+}
+
+.avatar {
+  width: 30px;
+  height: 30px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  background: var(--muted);
+  color: var(--white);
+
+  font-size: 10px;
+}
+
+
+/* ==============================
+   MENU MOBILE
+============================== */
+
+.mobile-menu {
+  position: absolute;
+  top: 72px;
+  right: 24px;
+
+  min-width: 220px;
+
+  padding: 10px;
+
+  background: var(--white);
+
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-md);
+
+  box-shadow: var(--shadow);
+}
+
+.mobile-menu a {
+  display: block;
+
+  padding: 12px;
+
+  border-radius: var(--radius-sm);
+}
+
+.mobile-menu a:hover {
+  background: var(--surface-soft);
+}
+
+
+/* ==============================
+   BARRA DE PESQUISA
+============================== */
+
+.search-bar {
+  min-height: 66px;
+
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr 1fr auto;
+  align-items: center;
+
+  transform: translateY(20px);
+
+  background: var(--white);
+
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-full);
+
+  box-shadow: var(--shadow);
+
+  overflow: hidden;
+}
+
+.search-segment {
+  min-width: 0;
+
+  padding: 10px 22px;
+
+  border-right: 1px solid var(--hairline-soft);
+}
+
+.search-segment span {
+  display: block;
+
+  margin-bottom: 4px;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.search-segment input,
+.search-segment select {
+  width: 100%;
+
+  border: 0;
+  outline: 0;
+
+  background: transparent;
+  color: var(--muted);
+
+  font-size: 14px;
+}
+
+.search-btn {
+  width: 48px;
+  height: 48px;
+
+  margin-right: 9px;
+
+  border: 0;
+  border-radius: 50%;
+
+  background: var(--primary);
+  color: var(--white);
+
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.search-btn:hover {
+  background: var(--primary-active);
+}
+
+
+/* ==============================
+   CATEGORIAS
+============================== */
+
+.category-strip {
+  margin-top: 52px;
+  padding: 18px 0 14px;
+
+  display: flex;
+
+  gap: 24px;
+
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.category-strip::-webkit-scrollbar {
+  display: none;
+}
+
+.category {
+  flex: 0 0 auto;
+
+  display: grid;
+  justify-items: center;
+
+  gap: 6px;
+
+  padding: 8px 2px 12px;
+
+  border: 0;
+  border-bottom: 2px solid transparent;
+
+  background: transparent;
+  color: var(--muted);
+
+  font-size: 13px;
+}
+
+.category span {
+  font-size: 22px;
+}
+
+.category.active {
+  color: var(--ink);
+  border-bottom-color: var(--ink);
+}
+
+
+/* ==============================
+   SECÇÃO PRINCIPAL
+============================== */
+
+.hero {
+  background-image:url(../img/cinza.jpg);
+  background-repeat: no-repeat;
+  border-radius:10px;
+
+  background-size:cover;
+  padding: 52px 0 28px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  gap: 30px;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  padding:10px;
+  color: var(--primary);
+
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.hero h1 {
+  max-width: 760px;
+  color: #dddddd;
+  text-shadow: 1px 2px 19px #222222;
+  margin: 0;
+  padding:10px;
+  font-size: clamp(32px, 5vw, 64px);
+  line-height: 1.06;
+  letter-spacing: -0.04em;
+}
+
+.hero p:not(.eyebrow) {
+  max-width: 680px;
+  padding:10px;
+  color: var(--muted);
+
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.secondary-btn {
+  flex: 0 0 auto;
+
+  padding: 13px 22px;
+
+  border: 1px solid var(--ink);
+  border-radius: var(--radius-sm);
+
+  background: var(--white);
+
+  font-weight: 600;
+}
+
+.secondary-btn:hover {
+  background: var(--surface-soft);
+}
+
+
+/* ==============================
+   LISTAGENS
+============================== */
+
+.listings-section {
+  padding: 28px 0 72px;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  margin-bottom: 24px;
+}
+
+.section-heading h2,
+.inspiration h2 {
+  margin: 0 0 6px;
+
+  font-size: 28px;
+}
+
+.section-heading p {
+  margin: 0;
+
+  color: var(--muted);
+}
+
+.listing-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 30px 20px;
+}
+
+.listing-card {
+  min-width: 0;
+}
+
+
+/* ==============================
+   FOTOGRAFIAS DOS ALOJAMENTOS
+============================== */
+
+.photo-wrap {
+  position: relative;
+
+  aspect-ratio: 1 / 1;
+
+  overflow: hidden;
+
+  background: var(--surface-soft);
+
+  border-radius: var(--radius-md);
+}
+
+.listing-photo {
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform 0.35s ease;
+}
+
+.listing-card:hover .listing-photo {
+  transform: scale(1.03);
+}
+
+.favorite-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+
+  padding: 7px 10px;
+
+  background: rgba(255, 255, 255, 0.95);
+
+  border-radius: var(--radius-full);
+
+  box-shadow: var(--shadow);
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.heart-btn {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+
+  border: 0;
+
+  background: transparent;
+  color: var(--white);
+
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.65);
+
+  font-size: 31px;
+  line-height: 1;
+}
+
+.heart-btn.saved {
+  color: var(--primary);
+}
+
+
+/* ==============================
+   INFORMAÇÕES DOS ALOJAMENTOS
+============================== */
+
+.listing-info {
+  padding-top: 12px;
+
+  font-size: 14px;
+}
+
+.listing-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  gap: 12px;
+}
+
+.listing-title {
+  margin: 0;
+
+  font-size: 15px;
+  line-height: 1.35;
+}
+
+.rating {
+  white-space: nowrap;
+
+  font-size: 13px;
+}
+
+.listing-category,
+.listing-dates {
+  margin: 4px 0 0;
+
+  color: var(--muted);
+}
+
+.listing-price {
+  margin: 8px 0 0;
+}
+
+.empty-state {
+  padding: 72px 20px;
+
+  text-align: center;
+
+  background: var(--surface-soft);
+
+  border-radius: var(--radius-lg);
+}
+
+
+/* ==============================
+   INSPIRAÇÃO
+============================== */
+
+.inspiration {
+  padding: 64px 0;
+
+  background: var(--surface-soft);
+}
+
+.inspiration-inner {
+  display: grid;
+
+  gap: 34px;
+}
+
+.city-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 1px;
+
+  overflow: hidden;
+
+  background: var(--hairline);
+
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-md);
+}
+
+.city-grid button {
+  padding: 22px;
+
+  text-align: left;
+
+  border: 0;
+
+  background: var(--white);
+}
+
+.city-grid button:hover {
+  background: #fcfcfc;
+}
+
+.city-grid strong,
+.city-grid span {
+  display: block;
+}
+
+.city-grid span {
+  margin-top: 6px;
+
+  color: var(--muted);
+
+  font-size: 14px;
+}
+
+
+/* ==============================
+   RODAPÉ
+============================== */
+
+.site-footer {
+  padding: 48px 0 22px;
+
+  border-top: 1px solid var(--hairline);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 40px;
+
+  padding-bottom: 36px;
+}
+
+.footer-grid h3 {
+  font-size: 15px;
+}
+
+.footer-grid a {
+  display: block;
+
+  margin: 12px 0;
+
+  color: var(--body);
+
+  font-size: 14px;
+}
+
+.footer-grid a:hover {
+  text-decoration: underline;
+}
+
+.legal-band {
+  display: flex;
+  justify-content: space-between;
+
+  gap: 18px;
+
+  padding-top: 22px;
+
+  border-top: 1px solid var(--hairline);
+
+  color: var(--muted);
+
+  font-size: 13px;
+}
+
+.legal-band div {
+  display: flex;
+
+  gap: 16px;
+}
+
+
+/* ==============================
+   NOTIFICAÇÃO
+============================== */
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  z-index: 100;
+
+  padding: 12px 18px;
+
+  transform: translate(-50%, 30px);
+
+  opacity: 0;
+  pointer-events: none;
+
+  background: var(--ink);
+  color: var(--white);
+
+  border-radius: var(--radius-full);
+
+  transition: 0.25s ease;
+}
+
+.toast.show {
+  transform: translate(-50%, 0);
+
+  opacity: 1;
+}
+
+
+/* ==============================
+   TABLETS E ECRÃS MÉDIOS
+============================== */
+
+@media (max-width: 1050px) {
+  .main-nav {
+    display: none;
+  }
+
+  .nav-shell {
+    grid-template-columns: 1fr auto;
+  }
+
+  .listing-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .search-bar {
+    grid-template-columns: 1.2fr 1fr 1fr auto;
+  }
+
+  .guests-segment {
+    display: none;
+  }
+}
+
+
+/* ==============================
+   TELEMÓVEIS E TABLETS PEQUENOS
+============================== */
+
+@media (max-width: 760px) {
+  .container {
+    width: min(100% - 28px, 1280px);
+  }
+
+  .site-header {
+    position: relative;
+  }
+
+  .nav-shell {
+    min-height: 68px;
+  }
+
+  .brand {
+    font-size: 19px;
+  }
+
+  .host-link,
+  .icon-btn {
+    display: none;
+  }
+
+  .search-bar {
+    min-height: 58px;
+
+    grid-template-columns: 1fr auto;
+
+    margin-top: 6px;
+    margin-bottom: 10px;
+
+    transform: none;
+  }
+
+  .search-segment {
+    padding: 10px 18px;
+
+    border: 0;
+  }
+
+  .search-segment:not(:first-child) {
+    display: none;
+  }
+
+  .search-btn {
+    width: 42px;
+    height: 42px;
+  }
+
+  .category-strip {
+    margin-top: 4px;
+  }
+
+  .hero {
+    padding-top: 32px;
+
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+  }
+
+  .listing-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .city-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .legal-band {
+    flex-direction: column;
+  }
+}
+
+
+/* ==============================
+   TELEMÓVEIS PEQUENOS
+============================== */
+
+@media (max-width: 520px) {
+  .listing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .city-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .favorite-badge {
+    font-size: 10px;
+  }
+}

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Modelo responsivo inspirado em um marketplace de hospedagens." />
+  <title>StayFinder — Encontre seu próximo destino</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-shell container">
+      <a class="brand" href="#" aria-label="StayFinder — início">
+        <span class="brand-mark" aria-hidden="true">ᚱ</span>
+        <span>ᚱui ℍouse</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Navegação principal">
+        <button class="nav-tab active" data-tab="hospedagens">Hospedagens</button>
+        <button class="nav-tab" data-tab="hospedagens" >Sobre</a></button>
+        <button class="nav-tab" data-tab="experiencias"><a href="experiencias.html">Experiências</a><span class="new-badge">NOVO</span></button>
+        <button class="nav-tab" data-tab="servicos"><a href="sobre.html"></a>Serviços <span class="new-badge">NOVO</span></button>
+        <button class="nav-tab" data-tab="hospedagens"><a href="#contacto">Contactos</a></button>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="host-link">Anuncie seu espaço</button>
+        <button class="icon-btn" aria-label="Alterar idioma">◎</button>
+        <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu">
+          <span aria-hidden="true">☰</span>
+          <span class="avatar" aria-hidden="true">●</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu" hidden>
+      <a href="#destinos">Explorar destinos</a>
+      <a href="#favoritos">Favoritos</a>
+      <a href="#anunciar">Anuncie seu espaço</a>
+    </div>
+
+    <form class="search-bar container" id="searchForm">
+      <label class="search-segment">
+        <span>Onde</span>
+        <input id="whereInput" type="text" placeholder="Buscar destinos" autocomplete="off" />
+      </label>
+      <label class="search-segment">
+        <span>Entrada</span>
+        <input id="checkinInput" type="date" />
+      </label>
+      <label class="search-segment">
+        <span>Saída</span>
+        <input id="checkoutInput" type="date" />
+      </label>
+      <label class="search-segment guests-segment">
+        <span>Hóspedes</span>
+        <select id="guestsInput">
+          <option value="1">1 hóspede</option>
+          <option value="2">2 hóspedes</option>
+          <option value="3">3 hóspedes</option>
+          <option value="4">4 hóspedes</option>
+          <option value="5">5+ hóspedes</option>
+        </select>
+      </label>
+      <button class="search-btn" type="submit" aria-label="Pesquisar">⌕</button>
+    </form>
+  </header>
+
+  <main>
+    <section class="category-strip container" aria-label="Categorias">
+      <button class="category active" data-category="Todos"><span>⌂</span>Todos</button>
+      <button class="category" data-category="Praia"><span>≈</span>Praia</button>
+      <button class="category" data-category="Campo"><span>♧</span>Campo</button>
+      <button class="category" data-category="Cidade"><span>▦</span>Cidade</button>
+      <button class="category" data-category="Piscina"><span>◉</span>Piscina</button>
+      <button class="category" data-category="Luxo"><span>✦</span>Luxo</button>
+      <button class="category" data-category="Cabana"><span>△</span>Cabana</button>
+    </section>
+
+    <section class="hero container">
+      <div>
+        <p class="eyebrow">DESCUBRA LUGARES INCRÍVEIS</p>
+        <h1>Seu próximo destino começa aqui.</h1>
+        <p>Explore estadias selecionadas, experiências locais e espaços únicos para todos os estilos de viagem.</p>
+      </div>
+      <button class="secondary-btn" id="showAllBtn">Ver todos os destinos</button>
+    </section>
+
+    <section class="listings-section container" id="destinos">
+      <div class="section-heading">
+        <div>
+          <h2>Destinos em destaque</h2>
+          <p id="resultsText">6 acomodações encontradas</p>
+        </div>
+      </div>
+
+      <div class="listing-grid" id="listingGrid"></div>
+      <div class="empty-state" id="emptyState" hidden>
+        <h3>Nenhuma acomodação encontrada</h3>
+        <p>Tente outro destino ou selecione uma categoria diferente.</p>
+      </div>
+    </section>
+
+    <section class="inspiration">
+      <div class="container inspiration-inner">
+        <div>
+          <p class="eyebrow">INSPIRAÇÃO</p>
+          <h2>Ideias para a sua próxima viagem</h2>
+        </div>
+        <div class="city-grid">
+          <button><strong>Lisboa</strong><span>Arquitetura e gastronomia</span></button>
+          <button><strong>Rio de Janeiro</strong><span><!---Vai ter link de fotos para cada ----->Praia e vida urbana</span></button>
+          <button><strong>Luanda</strong><span>Ilha do Mussulo</span></button>
+          <button><strong>Gramado</strong><span>Charme e clima europeu</span></button>
+          <button><strong>Florianópolis</strong><span>Ilhas e natureza</span></button>
+          <button><strong>São vicente</strong><span>Ilha verde</span></button>
+          <button><strong>Porto</strong><span>História e vinhos</span></button>
+          <button><strong>Salvador</strong><span>Cultura e mar</span></button>
+          <button><strong>Benguela</strong><span>Praia Morena </span></button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="detakhes">
+      <h2>Contactos</h2>
+    </div>
+    <div class="container footer-grid">
+      <div>
+        <h3>Atendimento</h3>
+        <a href="#">Central de ajuda</a>
+        <a href="#">Cancelamentos</a>
+        <a href="#">Segurança</a>
+      </div>
+      <div>
+        <h3>Para anfitriões</h3>
+        <a href="#">Anuncie seu espaço</a>
+        <a href="#">Recursos</a>
+        <a href="#">Comunidade</a>
+      </div>
+      <div>
+        <h3>StayFinder</h3>
+        <a href="#">Sobre</a>
+        <a href="#">Carreiras</a>
+        <a href="#">Novidades</a>
+      </div>
+    </div>
+    <div class="container legal-band" id="contacto">
+      <span>© 2026 StayFinder</span>
+      <div><a href="#">Privacidade</a><a href="#">Termos</a><a href="#">Português (BR)</a></div>
+    </div>
+  </footer>
+
+  <template id="listingTemplate">
+    <article class="listing-card">
+      <div class="photo-wrap">
+        <img class="listing-photo" alt="" loading="lazy" />
+        <span class="favorite-badge">Preferido dos hóspedes</span>
+        <button class="heart-btn" type="button" aria-label="Adicionar aos favoritos">♡</button>
+      </div>
+      <div class="listing-info">
+        <div class="listing-title-row">
+          <h3 class="listing-title"></h3>
+          <span class="rating">★ <span></span></span>
+        </div>
+        <p class="listing-category"></p>
+        <p class="listing-dates"></p>
+        <p class="listing-price"><strong></strong> por noite</p>
+      </div>
+    </article>
+  </template>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="javascript/script.js"></script>
+</body>
+</html>
