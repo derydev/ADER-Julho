@@ -1,0 +1,37 @@
+/*smartphone*/
+
+@media only screen and (max-width: 787px){
+     .header img{
+        margin-left: 98px;
+    }   
+    .header{
+        position:relative;
+        height:390px;
+
+    }
+    .topo{
+        text-align: center;
+
+    }
+    .topo ul li a{
+        display: block;
+        float: left;
+        padding: 5px;
+        border: 1px solid #d6d1ca;
+        border-radius: 15px;
+        width: 220px;
+        padding: 10px;
+    }
+
+/* banner */
+    .banner h1{
+        font-size: 55px;
+        margin-top: -1px;
+        margin-top:40px;
+        
+    }
+    .banner a{
+        font-size: 17px;
+        
+    }
+}
