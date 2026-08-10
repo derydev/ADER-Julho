@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dery Coffe, a tua cafetaria local em Loures.">
+  <title>Dery Coffe | Início</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html"><span class="logo">DC</span><span>Dery Coffe</span></a>
+    <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="main-nav" aria-label="Navegação principal">
+      <a class="active" href="index.html">Início</a><a href="sobre.html">Sobre</a><a href="menu.html">Menu</a><a href="contactos.html">Contactos</a><a href="agendamento.html">Agendar</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <img src="img/dery-coffe-hero.png" alt="Interior da Dery Coffe com café e pastelaria">
+      <div class="hero-overlay"></div>
+      <div class="hero-content page-width">
+        <p class="eyebrow">CAFETARIA LOCAL · LOURES</p>
+        <h1>Dery Coffe</h1>
+        <p class="tagline">O teu café de todos os dias.</p>
+        <a class="button button-light" href="menu.html">Conhecer o menu</a>
+      </div>
+    </section>
+
+    <section class="environment" id="ambiente">
+      <div><p class="eyebrow">UM LUGAR PARA FICAR</p><h2>Há sempre lugar à mesa</h2><p>Café acabado de moer, pão quente e bolos que sabem a casa.</p></div>
+      <button class="button" id="colorButton" type="button" aria-pressed="false">Mudar para preto</button>
+    </section>
+
+    <section class="highlights page-width">
+      <div class="section-heading"><p class="eyebrow">OS FAVORITOS</p><h2>Três bons motivos para voltar</h2><p>Clica numa fotografia para reservar o teu momento.</p></div>
+      <div class="card-grid">
+        <article class="card"><a href="agendamento.html?tipo=Pequeno-almoço"><img class="image-breakfast" src="img/dery-coffe-hero.png" alt="Agendar pequeno-almoço"></a><div class="card-body"><span>01</span><h3>Pequenos-almoços</h3><p>Combinações completas para começar bem o dia.</p></div></article>
+        <article class="card"><a href="agendamento.html?tipo=Mesa com café especial"><img class="image-coffee" src="img/dery-coffe-hero.png" alt="Agendar mesa com café especial"></a><div class="card-body"><span>02</span><h3>Cafés especiais</h3><p>Grãos selecionados e extrações cuidadas pelos nossos baristas.</p></div></article>
+        <article class="card"><a href="agendamento.html?tipo=Bolos caseiros"><img class="image-cake" src="img/dery-coffe-hero.png" alt="Agendar bolos caseiros"></a><div class="card-body"><span>03</span><h3>Bolos caseiros</h3><p>Receitas preparadas diariamente na nossa cozinha.</p></div></article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-brand"><span class="logo">DC</span><div><strong>Dery Coffe</strong><p>O teu café de todos os dias.</p></div></div>
+    <div><strong>Localização</strong><p>Loures, Lisboa</p><a href="https://www.google.com/maps/search/?api=1&amp;query=Loures%2C%20Lisboa" target="_blank" rel="noopener">Ver no mapa</a></div>
+    <div><strong>Horário</strong><p>Seg–Sex: 07:30–19:00<br>Fim de semana: 08:30–18:00</p></div>
+    <p>© <span id="currentYear"></span> Dery Coffe</p>
+  </footer>
+  <script src="js/script.js"></script>
+</body>
+</html>
