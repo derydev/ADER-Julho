@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Inicia sessão na tua conta Dery Coffee.">
+    <title>Admin sessão — Dery Coffee</title>
+    <link rel="stylesheet" href="css/admin.css">
+  </head>
+
+  <body>
+    <main class="login-page">
+      <!-- Área visual -->
+      <section class="login-image" aria-label="Ambiente da Dery Coffee">
+        <a class="login-logo light-logo" href="index.html" aria-label="Voltar à página inicial">
+          <img src="img/cofepngMenor.png" alt="">
+          <span>Dery Coffee</span>
+        </a>
+
+        <div class="image-message">
+          <span class="eyebrow">A tua pausa começa aqui</span>
+          <h1>Bom café.<br>Boas memórias.</h1>
+          <p>Entra na tua conta e volta a encontrar e elabora os serviços</p>
+        </div>
+      </section>
+
+      <!-- Formulário de login -->
+      <section class="login-content">
+        <a class="back-link" href="index.html" aria-label="Voltar à página inicial">
+          <span aria-hidden="true">←</span> Voltar ao início
+        </a>
+
+        <div class="form-container">
+          <a class="login-logo mobile-logo" href="index.html">
+            <img src="img/cofepngMenor.png" alt="">
+            <span>Dery Coffee</span>
+          </a>
+
+          <span class="eyebrow">Área de Admin</span>
+          <h2>Bem-vindo de volta.</h2>
+          <p class="form-intro">Introduz os teus dados para acederes à tua conta admin.</p>
+
+          <form id="login-form" class="login-form">
+            <div id="login-message" class="login-message" role="status" aria-live="polite"></div>
+
+            <div class="input-group">
+              <label for="login-email">Nome</label>
+              <div class="input-box">
+                <svg aria-hidden="true" viewBox="0 0 24 24">
+               <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+              </svg>
+                <input id="login-nome" name="nome" type="text" autocomplete="Nome" placeholder="Digite seu Nome" required>
+              </div>
+            </div>
+
+            <div class="input-group">
+              <label for="login-email">Email</label>
+              <div class="input-box">
+                <svg aria-hidden="true" viewBox="0 0 24 24">
+                  <path d="M4 6h16v12H4zM4 7l8 6 8-6"/>
+                </svg>
+                <input id="login-email" name="email" type="email" autocomplete="email" placeholder="nome@email.pt" required>
+              </div>
+            </div>
+
+            <div class="input-group">
+              <div class="label-row">
+                <label for="login-password">Palavra-passe</label>
+                <a href="#">Esqueceste-te?</a>
+              </div>
+              <div class="input-box">
+                <svg aria-hidden="true" viewBox="0 0 24 24">
+                  <rect x="5" y="10" width="14" height="10" rx="2"/>
+                  <path d="M8 10V7a4 4 0 018 0v3"/>
+                </svg>
+                <input id="login-password" name="password" type="password" autocomplete="current-password" placeholder="A tua palavra-passe" minlength="6" required>
+                <button class="password-toggle" type="button" aria-label="Mostrar palavra-passe" aria-pressed="false">
+                  <svg aria-hidden="true" viewBox="0 0 24 24">
+                    <path d="M2 12s4-6 10-6 10 6 10 6-4 6-10 6S2 12 2 12z"/>
+                    <circle cx="12" cy="12" r="2.5"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <label class="remember-option">
+              <input type="checkbox" name="remember">
+              <span>Lembrar-me neste dispositivo</span>
+            </label>
+
+            <button class="submit-button" type="submit">
+              Iniciar sessão <span aria-hidden="true">→</span>
+            </button>
+          </form>
+
+          <!-- <p class="create-account">Ainda não tens conta? <a href="criar-conta.html">Criar conta</a></p> -->
+          <!--<p class="demo-note">Página demonstrativa — não introduzas dados reais.</p>--->
+        </div>
+      </section>
+    </main>
+
+    <script src="../js/login.js"></script>
+    <script src="../js/jquery.js"></script>
+  </body>
+</html>
