@@ -1,0 +1,336 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap');
+
+:root {
+  --coffee: #3f2d24;
+  --brown: #76533f;
+  --cream: #f4efe7;
+  --paper: #fffdf9;
+  --text: #29231f;
+  --muted: #746b64;
+  --line: #ded5ca;
+  --success: #315c3b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  background: var(--paper);
+  font-family: "DM Sans", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.login-page {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(420px, 1fr) minmax(480px, 1fr);
+}
+
+/* Lado esquerdo */
+.login-image {
+  position: relative;
+  min-height: 100vh;
+  padding: 45px 6vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #fff;
+  background:
+    linear-gradient(180deg, rgba(30, 19, 14, .2), rgba(30, 19, 14, .82)),
+    url("../img/drenacafe.jpg") center / cover;
+}
+
+.login-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+  font: 600 1.35rem "Playfair Display", serif;
+}
+
+.login-logo img {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+}
+
+.light-logo {
+  color: #fff;
+}
+
+.image-message {
+  max-width: 560px;
+  padding-bottom: 6vh;
+}
+
+.eyebrow {
+  color: var(--brown);
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+
+.image-message .eyebrow {
+  color: #e7d3b9;
+}
+
+.image-message h1 {
+  margin: 14px 0 20px;
+  font: 500 clamp(3.3rem, 6vw, 6.5rem)/.98 "Playfair Display", serif;
+  letter-spacing: -.04em;
+}
+
+.image-message p {
+  max-width: 440px;
+  color: rgba(255, 255, 255, .78);
+  font-size: 1.08rem;
+  line-height: 1.7;
+}
+
+/* Lado do formulário */
+.login-content {
+  position: relative;
+  padding: 45px max(35px, 7vw);
+  display: grid;
+  place-items: center;
+}
+
+.back-link {
+  position: absolute;
+  top: 38px;
+  right: 45px;
+  color: var(--muted);
+  font-size: .9rem;
+  transition: color .2s ease;
+}
+
+.back-link:hover {
+  color: var(--coffee);
+}
+
+.form-container {
+  width: min(100%, 460px);
+}
+
+.mobile-logo {
+  display: none;
+  margin-bottom: 50px;
+}
+
+.form-container h2 {
+  margin: 10px 0 12px;
+  font: 500 clamp(2.5rem, 4vw, 3.8rem)/1.08 "Playfair Display", serif;
+  letter-spacing: -.03em;
+}
+
+.form-intro {
+  margin: 0 0 34px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.login-form {
+  display: grid;
+  gap: 22px;
+}
+
+.input-group {
+  display: grid;
+  gap: 8px;
+}
+
+.input-group label,
+.label-row {
+  font-size: .9rem;
+  font-weight: 600;
+}
+
+.label-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.label-row a {
+  color: var(--brown);
+  font-weight: 500;
+}
+
+.input-box {
+  min-height: 56px;
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+.input-box:focus-within {
+  border-color: var(--brown);
+  box-shadow: 0 0 0 4px rgba(118, 83, 63, .1);
+}
+
+.input-box svg {
+  width: 20px;
+  fill: none;
+  stroke: var(--muted);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.7;
+}
+
+.input-box input {
+  width: 100%;
+  min-width: 0;
+  padding: 15px 0;
+  color: var(--text);
+  background: transparent;
+  border: 0;
+  outline: 0;
+}
+
+.input-box input::placeholder {
+  color: #aaa19a;
+}
+
+.password-toggle {
+  padding: 7px;
+  display: grid;
+  place-items: center;
+  background: transparent;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.password-toggle:hover {
+  background: var(--cream);
+}
+
+.remember-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--muted);
+  font-size: .9rem;
+  cursor: pointer;
+}
+
+.remember-option input {
+  width: 17px;
+  height: 17px;
+  accent-color: var(--coffee);
+}
+
+.submit-button {
+  min-height: 56px;
+  padding: 14px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: #fff;
+  background: var(--coffee);
+  border: 1px solid var(--coffee);
+  border-radius: 99px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.submit-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(63, 45, 36, .22);
+}
+
+.create-account {
+  margin: 28px 0 0;
+  text-align: center;
+  color: var(--muted);
+}
+
+.create-account a {
+  color: var(--brown);
+  font-weight: 600;
+}
+
+.demo-note {
+  margin-top: 28px;
+  color: #9a918a;
+  text-align: center;
+  font-size: .75rem;
+}
+
+.login-message {
+  display: none;
+  padding: 13px 15px;
+  color: var(--success);
+  background: #e8f1e8;
+  border-radius: 12px;
+  font-size: .9rem;
+}
+
+.login-message.show {
+  display: block;
+}
+
+/* Tablet e telemóvel */
+@media (max-width: 900px) {
+  .login-page {
+    grid-template-columns: 1fr;
+  }
+
+  .login-image {
+    display: none;
+  }
+
+  .login-content {
+    min-height: 100vh;
+    padding: 90px 24px 45px;
+  }
+
+  .mobile-logo {
+    display: inline-flex;
+  }
+
+  .back-link {
+    top: 28px;
+    right: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-content {
+    place-items: start center;
+  }
+
+  .mobile-logo {
+    margin-bottom: 35px;
+  }
+
+  .form-container h2 {
+    font-size: 2.55rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}

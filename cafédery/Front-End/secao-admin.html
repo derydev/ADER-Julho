@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Inicia sessão na tua conta Dery Coffee.">
-    <title>Iniciar sessão — Dery Coffee</title>
-    <link rel="stylesheet" href="css/criarsecao.css">
+    <title>Admin sessão — Dery Coffee</title>
+    <link rel="stylesheet" href="css/admin.css">
   </head>
 
   <body>
@@ -19,15 +19,15 @@
 
         <div class="image-message">
           <span class="eyebrow">A tua pausa começa aqui</span>
-          <h1>Damos vida ao  café.<br>Boas memórias.</h1>
-          <p>Crie a tua conta </p>
+          <h1>Bom café.<br>Boas memórias.</h1>
+          <p>Entra na tua conta e volta a encontrar e elabora os serviços</p>
         </div>
       </section>
 
       <!-- Formulário de login -->
       <section class="login-content">
-        <a class="back-link" href="iniciar-sessao.html" aria-label="Voltar à página inicial">
-          <span aria-hidden="true">←</span> Fazer login
+        <a class="back-link" href="index.html" aria-label="Voltar à página inicial">
+          <span aria-hidden="true">←</span> Voltar ao início
         </a>
 
         <div class="form-container">
@@ -36,21 +36,20 @@
             <span>Dery Coffee</span>
           </a>
 
-          <span class="eyebrow">Área de cliente</span>
+          <span class="eyebrow">Área de Admin</span>
           <h2>Bem-vindo de volta.</h2>
-          <p class="form-intro">Introduz os teus dados para acederes à tua conta.</p>
+          <p class="form-intro">Introduz os teus dados para acederes à tua conta admin.</p>
 
           <form id="login-form" class="login-form">
             <div id="login-message" class="login-message" role="status" aria-live="polite"></div>
 
             <div class="input-group">
-              <label for="login-email">Utilizador</label>
+              <label for="login-email">Nome</label>
               <div class="input-box">
-               <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="12" cy="8" r="4"></circle>
-                    <path d="M4 20c0-4 3.5-7 8-7s8 3 8 7"></path>
-                </svg>
-                <input id="login-text" name="text" type="text" autocomplete="text" placeholder="nome" required>
+                <svg aria-hidden="true" viewBox="0 0 24 24">
+               <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+              </svg>
+                <input id="login-nome" name="nome" type="text" autocomplete="Nome" placeholder="Digite seu Nome" required>
               </div>
             </div>
 
@@ -66,8 +65,8 @@
 
             <div class="input-group">
               <div class="label-row">
-               <!--  <label for="login-password">Palavra-passe</label>
-                <a href="#">Esqueceste-te?</a>-->
+                <label for="login-password">Palavra-passe</label>
+                <a href="#">Esqueceste-te?</a>
               </div>
               <div class="input-box">
                 <svg aria-hidden="true" viewBox="0 0 24 24">
@@ -90,16 +89,17 @@
             </label>
 
             <button class="submit-button" type="submit">
-              Criar conta <span aria-hidden="true">→</span>
+              Iniciar sessão <span aria-hidden="true">→</span>
             </button>
           </form>
- 
-          <p class="create-account"><a href="login.html">Fazer login</a></p>
+
+          <!-- <p class="create-account">Ainda não tens conta? <a href="criar-conta.html">Criar conta</a></p> -->
           <!--<p class="demo-note">Página demonstrativa — não introduzas dados reais.</p>--->
         </div>
       </section>
     </main>
 
-    <script src="js/script.js"></script>
+    <script src="../js/login.js"></script>
+    <script src="../js/jquery.js"></script>
   </body>
 </html>
